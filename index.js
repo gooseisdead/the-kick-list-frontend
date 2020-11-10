@@ -4,7 +4,10 @@ const selectorThree = document.querySelector(".selector3")
 const selectorFour = document.querySelector(".selector4")
 const selectorFive = document.querySelector(".selector5")
 const kickContainer = document.querySelector(".kick-container")
+<<<<<<< HEAD
 const addSneakerForm = document.querySelector('.form-div')
+=======
+>>>>>>> main
 
 
 function renderBrandImages(brand) {
@@ -56,6 +59,27 @@ function renderAllSneakers(sneaker) {
 }
 
 
+function renderAllSneakers(sneaker) {
+    sneaker.forEach(pair => {
+        if (pair.brand.id == "1") {
+            const kickCard1 = document.createElement("div")
+            kickCard1.className = "kick-card-1"
+            kickCard1.innerHTML = `
+            <p>${pair.name}</p>
+            <p>${pair.release}</p>
+            `
+            kickContainer.append(kickCard1)
+        } else if (pair.brand.id == "2") {
+            const kickCard2 = document.createElement("div")
+            kickCard2.innerHTML = `
+            <p>${pair.name}</p>
+            <p>${pair.release}</p>
+            `
+            kickContainer.append(kickCard2)
+        }
+    })
+    
+}
 
 
 function getAllSneakers() {
@@ -74,4 +98,11 @@ function getAllBrands() {
 }
 
 getAllSneakers()
+<<<<<<< HEAD
 getAllBrands()
+=======
+getAllBrands()
+
+
+
+>>>>>>> main
