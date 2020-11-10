@@ -4,10 +4,7 @@ const selectorThree = document.querySelector(".selector3")
 const selectorFour = document.querySelector(".selector4")
 const selectorFive = document.querySelector(".selector5")
 const kickContainer = document.querySelector(".kick-container")
-<<<<<<< HEAD
 const addSneakerForm = document.querySelector('.form-div')
-=======
->>>>>>> main
 
 
 function renderBrandImages(brand) {
@@ -98,11 +95,4 @@ function getAllBrands() {
 }
 
 getAllSneakers()
-<<<<<<< HEAD
 getAllBrands()
-=======
-getAllBrands()
-
-
-
->>>>>>> main
