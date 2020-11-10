@@ -32,6 +32,8 @@ function renderBrandImages(brand) {
     }) 
 }
 
+
+
 function renderAllSneakers(sneaker) {
     sneaker.forEach(pair => {
         if (pair.brand.id == "1") {
@@ -55,8 +57,6 @@ function renderAllSneakers(sneaker) {
 }
 
 
-
-
 function getAllSneakers() {
     fetch("http://localhost:3000/sneakers")
     .then(response => response.json())
@@ -74,3 +74,6 @@ function getAllBrands() {
 
 getAllSneakers()
 getAllBrands()
+
+
+
