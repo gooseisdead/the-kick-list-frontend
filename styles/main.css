@@ -26,6 +26,17 @@ img {
 .login-box { 
     grid-area: 1 / 6 / 2 / 7;
     border-style: dotted;
+    border-color: grey;
+}
+
+.selector { 
+    grid-area: 2 / 1 / 3 / 6; 
+    border-style: dotted;
+}
+
+.selector img {
+    max-width: 50%;
+    max-height: 50%;
 }
 
 .selector1 {
