@@ -1,6 +1,10 @@
 body {
-    background-color: burlywood;
-}
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Air-Jordan-Shoes-Picture.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+    }
 
 img {
     max-width: 100%;
@@ -14,73 +18,166 @@ img {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
-    
+
 .main-header { 
     grid-area: 1 / 1 / 2 / 6;
-    border-style: dotted;
+    border-color: black;
+    border-width:3px;  
+    border-style: double;
     text-align: center;
-    text-decoration: lightskyblue;
+    font-family:Georgia,serif;
+    font-size:80px;
+    letter-spacing:-3px;
+    line-height:normal;
+    color:#ebe5d0;
+	-webkit-text-stroke: 2px black;
 }
-
 
 .login-box { 
     grid-area: 1 / 6 / 2 / 7;
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+}
+
+img {
+    border-radius: 8px;
+    height: fit-content;
+    width: fit-content;
 }
 
 .selector1 {
     grid-area: 2 / 1 / 3 / 2;
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    border-radius: 8px;
 }
 
 
 .selector2 { 
     grid-area: 2 / 2 / 3 / 3; 
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    border-radius: 8px;
 }
 
 .selector3 { 
     grid-area: 2 / 3 / 3 / 4; 
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    border-radius: 8px;
 }
 
 .selector4 { 
     grid-area: 2 / 4 / 3 / 5; 
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    border-radius: 8px;
 }
 
 .selector5 { 
     grid-area: 2 / 5 / 3 / 6; 
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    border-radius: 8px;
 }
 
-.form-div { 
+.form-card { 
     grid-area: 2 / 6 / 6 / 7;
-    border-style: dotted;
+    border-width:1px;  
+    border-style: hidden;
+    color: #ebe5d0;
 }
 
 .kick-container { 
     grid-area: 3 / 1 / 6 / 6; 
-    border-style: dotted;
+    grid-gap: 5px;
+    padding: 1px;
+    border-width: 1px;  
+    border-style: solid;
     display: flex;
-    overflow-x: auto;
     margin: 1rem 0;
     max-width: calc(100vw - 2rem);
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    /* border: 2px dashed rgba(114, 186, 94, 0.35); */
+    /* background: rgba(114, 186, 94, 0.05); */
 }
 
-.kick-container img {
+.sneaker-img {
     flex: 0 1 auto;
-    height: 150px;
-    width: 150px;
+    max-width:100%;
+    height:350px;
+    /* height: 250px;
+    width: auto; */
     margin-right: 0.5rem;
     cursor: pointer;
 }
-  
-.kick-container img:last-child {
-    margin-right: 0;
+
+.kick-card-1 {
+    display: block;
+    border-width:1px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family:Georgia,serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;	
+
 }
 
-.kick-card {
-    border: dotted;
+.kick-card-2 {
+    display: block;
+    border-width:1px;  
+    border-style: solid;
     scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family:Georgia,serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;
+}
+
+.kick-card-3 {
+    display: block;
+    border-width:1px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family:Georgia,serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;
+}
+
+.kick-card-4 {
+    display: block;
+    border-width:1px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family:Georgia,serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;
+}
+
+.kick-card-5 {
+    display: block;
+    border-width:1px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family:Georgia,serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;
 }
