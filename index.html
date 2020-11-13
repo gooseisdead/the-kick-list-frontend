@@ -9,34 +9,45 @@
 </head>
 <body>
     <div class="parent">
-        <div class="main-header">the Kick-List</div>
+        <div class="main-header">the kick-list</div>
         <div class="login-box">
             <img src="images/login.png" alt="User Login"> 
         </div>
         <div class="selector"> </div>
             <div class="form-div"> 
             <form id="new-kick-form" autocomplete="off">
-                <h4>Add Kicks</h4>
+                <h4>add kicks</h4>
+                <label for="brand">Brand</label>
+                    <br>
+                <select name="brand_id" id="brand_id">
+                </select>
+                    <br>
                 <label for="name">Name:</label>
+                    <br>
                 <input type="text" name="name" id="name" />
                 <label for="release">Release:</label>
+                    <br>
                 <input type="text" name="release" id="release" />
+                    <br>
                 <label for="image">Image Link:</label>
+                    <br>
                 <input type="text" name="image" id="image">
                 <label for="rarity">Rarity:</label>
-                <br>
+                    <br>
                 <select name="rarity" id="rarity">
-                    <option value="platinum">Platinum</option>
-                    <option value="gold">Gold</option>
-                    <option value="silver">Silver</option>
-                    <option value="bronze">Bronze</option>
+                    <option value="Platinum">Platinum</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Bronze">Bronze</option>
                 </select>
-                <br>
+                    <br>
                 <label for="value">Value:</label>
+                    <br>
                 <input type="text" name="value" id="value" />
                 <label for="description">Description:</label>
+                    <br>
                 <textarea id="description"></textarea>  
-                <input type="submit" value="Add Kicks" />
+                <input type="submit" value="Add Kicks" id="add-kicks" />
             </form>
         </div>
         <div class="kick-container"> 

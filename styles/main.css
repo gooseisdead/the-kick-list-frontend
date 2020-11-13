@@ -1,11 +1,13 @@
 body {
-    background-color: burlywood;
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lead-the-making-of-the-1-reimagined-nike-news-native-1600-1533854895.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*");
+    /* background-color: grey; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
 
 .parent {
     display: grid;
@@ -16,65 +18,86 @@ img {
 }
     
 .main-header { 
+    opacity: 0.9;
+    margin-left: 80px;
+    margin-right: 80px;
     grid-area: 1 / 1 / 2 / 6;
-    border-style: dotted;
+    background-color: rgb(182, 177, 169);
+    border-color: black;
+    border-width:3px;  
+    border-style: ridge;
+    border-radius: 10px;
     text-align: center;
-    text-decoration: lightskyblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:80px;
+    letter-spacing:-3px;
+    line-height:normal;
+    color:#252521;
+	-webkit-text-stroke: 2px black;
+}
+
+#brand-logo {
+    border-color: black;
+    background-color: rgb(182, 177, 169);
+}
+
+h4 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 55px;
+    font-display: bold;
 }
 
 
 .login-box { 
     grid-area: 1 / 6 / 2 / 7;
-    border-style: dotted;
-    border-color: grey;
+    
 }
 
+.login-box img {
+    margin-left: 50px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
 .selector { 
+    opacity: 0.9;
+    text-align: center;
     grid-area: 2 / 1 / 3 / 6; 
-    border-style: dotted;
+    
 }
 
 .selector img {
+    border-style: groove;
+    border-radius: 10px;
+    padding: 15px;
     max-width: 50%;
     max-height: 50%;
+    cursor: pointer;
 }
 
-.selector1 {
-    grid-area: 2 / 1 / 3 / 2;
-    border-style: dotted;
-}
-
-
-.selector2 { 
-    grid-area: 2 / 2 / 3 / 3; 
-    border-style: dotted;
-}
-
-.selector3 { 
-    grid-area: 2 / 3 / 3 / 4; 
-    border-style: dotted;
-}
-
-.selector4 { 
-    grid-area: 2 / 4 / 3 / 5; 
-    border-style: dotted;
-}
-
-.selector5 { 
-    grid-area: 2 / 5 / 3 / 6; 
-    border-style: dotted;
-}
-
-.form-div { 
+#new-kick-form { 
+    padding: 10px;
+    opacity: 0.9;
+    border-style: groove;
+    border-color: black;
+    border-radius: 10px;
+    background-color: rgb(182, 177, 169);
+    text-align: center;
     grid-area: 2 / 6 / 6 / 7;
-    border-style: dotted;
 }
 
 .kick-container { 
     grid-area: 3 / 1 / 6 / 6; 
-    border-style: dotted;
+    grid-gap: 5px;
+    padding: 1px;
     display: flex;
+    /* display: grid; */
     overflow-x: auto;
+    width: auto;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     margin: 1rem 0;
     max-width: calc(100vw - 2rem);
 }
@@ -84,7 +107,6 @@ img {
     height: 150px;
     width: 150px;
     margin-right: 0.5rem;
-    cursor: pointer;
 }
   
 .kick-container img:last-child {
@@ -92,6 +114,188 @@ img {
 }
 
 .kick-card {
-    border: dotted;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-width:1px;  
+    border-style: solid;
     scroll-padding: 5px;
+    border-color: transparent;
+    border-style: double;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    letter-spacing:1px;
+    color:#ebe5d0;	
+    
+}
+.kick-gold {
+    opacity: 0.9;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-width: 5px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: gold;
+    border-style: double;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    letter-spacing:1px;
+    background-color: gold;	
+    animation-name: rare-gold;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rare-gold {
+    0% {
+      background-color: rgb(233, 208, 98);
+    }
+    25% {
+      background-color: rgb(218, 190, 68);
+    }
+    50% {
+      background-color: rgb(218, 190, 68);
+    }
+    100% {
+      background-color: rgb(233, 208, 98);
+    }
+  }
+
+.kick-silver {
+    opacity: 0.9;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-width: 5px;  
+    border-style: solid;
+    border-color: rgb(119, 110, 110);
+    scroll-padding: 5px;
+    border-style: double;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    letter-spacing:1px;
+    animation-name: rare-silver;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rare-silver {
+    0% {
+      background-color: rgb(221, 215, 224);
+    }
+    25% {
+      background-color: rgb(193, 189, 196);
+    }
+    50% {
+      background-color:  rgb(193, 189, 196);
+    }
+    100% {
+      background-color:rgb(221, 215, 224);
+    }
+}
+
+.kick-bronze {
+    opacity: 0.9;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-width: 5px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: brown;
+    border-style: double;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    letter-spacing:1px;
+    background-color: rgb(211, 128, 80);
+    animation-name: rare-bronze;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;	
+}
+
+@keyframes rare-bronze {
+    0% {
+      background-color: rgb(204, 113, 60);
+    }
+    25% {
+      background-color: rgb(207, 103, 42);
+    }
+    50% {
+      background-color: rgb(207, 103, 42);
+    }
+    100% {
+      background-color:rgb(204, 113, 60);
+    }
+}
+
+.kick-platinum {
+    opacity: 0.9;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-width:5px;  
+    border-style: solid;
+    scroll-padding: 5px;
+    border-color: black;
+    border-style: double;
+    border-radius: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    letter-spacing:1px;
+    background-color: blanchedalmond;
+    animation-name: rare-platinum;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rare-platinum {
+    0% {
+      background-color: rgb(235, 240, 193);
+    }
+    25% {
+      background-color: rgb(224, 212, 159);
+    }
+    50% {
+      background-color: rgb(224, 212, 159);
+    }
+    100% {
+      background-color: rgb(235, 240, 193);
+    }
+}
+
+input[type=text], select {
+    font-size: 20px;
+    color: #16181d;
+    size: 80px;
+    width: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid rgb(37, 33, 33);
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+#description {
+    height: 150px;
+    border: 1px solid rgb(37, 33, 33);
+    border-radius: 25px;
+}
+
+#add-kicks {
+    background-color: rgb(249, 253, 253);
+    border-radius: 25px;
+    cursor: pointer;
 }

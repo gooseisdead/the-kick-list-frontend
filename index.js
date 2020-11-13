@@ -1,6 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
 
-
-// document.addEventListener("DOMContentLoaded", function(){
     const BASE_URL = "http://localhost:3000"
     const BRANDS_URL = `${BASE_URL}/brands`
     const SNEAKERS_URL = `${BASE_URL}/sneakers`
@@ -13,43 +12,23 @@
     const kickDescription = document.querySelector(".kick-description")
     const kickRating = document.querySelector(".kick-rating")
     const kickContainer = document.querySelector(".kick-container")
-    // const kickCard = document.querySelector("#kick-card")
+    const selectBrand = document.querySelector("#brand_id")
+    const kickForm = document.querySelector("#new-kick-form")
+    
+    function renderOption(brandObj) {
+        const option = document.createElement("option")
+        option.textContent = brandObj.name
+        option.value = brandObj.id
+        selectBrand.append(option)
+    }
 
-    // function renderSneakers(sneakerObj) {
-
-    //     kickCard.innerHTML = `
-    //         <p class="kick-name">${sneakerObj.name}</p>
-    //         <p class="kick-release">${sneakerObj.release}</p>
-    //         <img src="${sneakerObj.image}" alt="sneakers" class="kick-image">
-    //         <p class="kick-value">${sneakerObj.value}</p>
-    //         <p class="kick-rarity">${sneakerObj.rarity}</p>
-    //         <p class="kick-description">${sneakerObj.description}</p>
-    //         <p class="kick-rating">${sneakerObj.rating}</p> 
-    //         `
-
-
-
-
-
-        // kickName.innerText = sneakerObj.name
-        // kickValue.innerText = sneakerObj.release
-        // kickImage.src = sneakerObj.image
-        // kickRarity.innerText = sneakerObj.rarity 
-        // kickDescription.innerText = sneakerObj.description 
-        // kickRating.innerText = sneakerObj.rating 
-        // const p = document.createElement("p")
-        // p.textContent = sneakerObj.name 
-
-        // const ul = document.createElement("ul")
-        // const button = document.createElement("button")
-        // button.innerText = "DELETE"
-        // const li = document.createElement("li")
-        // li.innerHTML = `
-        // ${sneakerObj.name}`
-        // ul.append(li, button)
-        // kickCard.append(p, ul)
-        // kickContainer.append(kickCard)
-    // }
+    function allNike(brandObj) {
+        if (brandObj.id == "1") {
+            brandObj.sneakers.forEach(sneaker => {
+                sneaker.name
+            })  
+        }      
+    }
 
 
     function renderBrand(brandObj) {
@@ -62,133 +41,81 @@
         img.src = brandObj.logo
         selector.append(img)
         
-        // brandObj.sneakers.forEach(sneakerObj => {
-            // renderSneaker(sneakerObj, kickCard)
             img.addEventListener("click", function(event) {
                 if (img.dataset.id == brandObj.id) {
-                    // renderSneakers(sneakerObj)
                 brandObj.sneakers.forEach(sneakerObj => {
-            let kickCard = document.createElement("div")
-            kickCard.innerHTML = `
-            <p class="kick-name">${sneakerObj.name}</p>
-            <p class="kick-release">${sneakerObj.release}</p>
-            <img src="${sneakerObj.image}" alt="sneakers" class="kick-image">
-            <p class="kick-value">$${sneakerObj.value}</p>
-            <p class="kick-rarity">${sneakerObj.rarity}</p>
-            <p class="kick-description">${sneakerObj.description}</p>
-            <p class="kick-rating">${sneakerObj.rating}</p> 
-            `
-            kickContainer.append(kickCard)
+                    let kickCard = document.createElement("div")
+                    kickCard.className = "kick-card"
+                    kickCard.innerHTML = `
+                    <p class="kick-name">${sneakerObj.name}</p>
+                    <p class="kick-release">${sneakerObj.release}</p>
+                    <img src="${sneakerObj.image}" alt="sneakers" class="kick-image">
+                    <p class="kick-value">$${sneakerObj.value}</p>       
+                    <p class="kick-rarity">${sneakerObj.rarity}</p>
+                    <p class="kick-description">${sneakerObj.description}</p>
+                    <p class="kick-rating">${sneakerObj.rating}</p> 
+                    `
+                if (sneakerObj.rarity == "Gold") {
+                    kickCard.className = "kick-gold"
+                } else if (sneakerObj.rarity == "Silver") {
+                    kickCard.className = "kick-silver"
+                } else if (sneakerObj.rarity == "Bronze") {
+                    kickCard.className = "kick-bronze"
+                } else if (sneakerObj.rarity == "Platinum") {
+                    kickCard.className = "kick-platinum"
+                } 
+
+                    kickContainer.append(kickCard)
                 })
             }
         })
-        
-       
     }
 
-    
+    function calculateValue(brandObj) {
+        brandObj.sneakers.forEach(sneakerObj => {
+            
+        })
+    }
 
+    kickForm.addEventListener("submit", function(event) {
+        event.preventDefault()
+        const newSneakerObj = {
+            brand_id: parseInt(event.target.brand_id.value),
+            name: event.target.name.value,
+            release: event.target.release.value,
+            image: event.target.image.value,
+            rarity: event.target.rarity.value,
+            value: event.target.value.value,
+            description: event.target.description.value
+        }
+        fetch("http://localhost:3000/sneakers", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newSneakerObj)
+        })
+            .then(response => response.json())
+            .then(newSneaker => {
+                console.log(newSneaker)
+                
+            })
+        event.target.reset()
+    })
 
-    function initialize() {
+    function getBrandData() {
         fetch(BRANDS_URL)
         .then(r => r.json())
         .then(brandsArray => {
             brandsArray.forEach(brandObj => {
             renderBrand(brandObj)
+            renderOption(brandObj)
+            calculateValue(brandObj)
+            allNike(brandObj)
             })
         })
     }
 
-    initialize()
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-// const selectorOne = document.querySelector(".selector1")
-// const selectorTwo = document.querySelector(".selector2")
-// const selectorThree = document.querySelector(".selector3")
-// const selectorFour = document.querySelector(".selector4")
-// const selectorFive = document.querySelector(".selector5")
-// const kickContainer = document.querySelector(".kick-container")
-
-
-// function renderBrandImages(brand) {
-//     brand.forEach(brand => {
-//         const img = document.createElement("img")
-//         img.className = "brand-image"
-//         img.setAttribute('src', '')
-//         img.setAttribute('alt', 'brand-logo')
-//         img.setAttribute("id", "brand-logo")
-//         if (brand.id == "1") {
-//             img.src = brand.logo
-//             selectorOne.append(img)
-//         } else if (brand.id == "2") {
-//             img.src = brand.logo
-//             selectorTwo.append(img)
-//         } else if (brand.id == "3") {
-//             img.src = brand.logo
-//             selectorThree.append(img)
-//         } else if (brand.id == "4") {
-//             img.src = brand.logo
-//             selectorFour.append(img)
-//         } else if (brand.id == "5") {
-//             img.src = brand.logo
-//             selectorFive.append(img)
-//         }
-//     }) 
-// }
-
-
-
-// function renderAllSneakers(sneaker) {
-//     sneaker.forEach(pair => {
-//         if (pair.brand.id == "1") {
-//             const kickCard1 = document.createElement("div")
-//             kickCard1.className = "kick-card-1"
-//             kickCard1.innerHTML = `
-//             <p>${pair.name}</p>
-//             <p>${pair.release}</p>
-//             `
-//             kickContainer.append(kickCard1)
-//         } else if (pair.brand.id == "2") {
-//             const kickCard2 = document.createElement("div")
-//             kickCard2.innerHTML = `
-//             <p>${pair.name}</p>
-//             <p>${pair.release}</p>
-//             `
-//             kickContainer.append(kickCard2)
-//         }
-//     })
-    
-// }
-
-
-// function getAllSneakers() {
-//     fetch("http://localhost:3000/sneakers")
-//     .then(response => response.json())
-//     .then(data => 
-//         renderAllSneakers(data))
-// }
-
-
-// function getAllBrands() {
-//     fetch("http://localhost:3000/brands")
-//     .then(response => response.json())
-//     .then(data => 
-//         renderBrandImages(data))
-// }
-
-// getAllSneakers()
-// getAllBrands()
-
-
-
+    getBrandData()
+   
+})
