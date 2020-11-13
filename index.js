@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const kickContainer = document.querySelector(".kick-container")
     const selectBrand = document.querySelector("#brand_id")
     const kickForm = document.querySelector("#new-kick-form")
+    const loginImg = document.querySelector("#login-img")
+    const loginBox = document.querySelector(".login-box")
     
     function renderOption(brandObj) {
         const option = document.createElement("option")
@@ -21,15 +23,6 @@ document.addEventListener("DOMContentLoaded", function(){
         option.value = brandObj.id
         selectBrand.append(option)
     }
-
-    function allNike(brandObj) {
-        if (brandObj.id == "1") {
-            brandObj.sneakers.forEach(sneaker => {
-                sneaker.name
-            })  
-        }      
-    }
-
 
     function renderBrand(brandObj) {
         
@@ -68,12 +61,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     kickContainer.append(kickCard)
                 })
             }
-        })
-    }
-
-    function calculateValue(brandObj) {
-        brandObj.sneakers.forEach(sneakerObj => {
-            
         })
     }
 
