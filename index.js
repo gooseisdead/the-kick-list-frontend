@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function renderBrand(brandObj) {
+
+        console.log(brandObj)
         
         const img = document.createElement("img")
         img.dataset.id = brandObj.id
@@ -48,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function(){
                     <p class="kick-description">${sneakerObj.description}</p>
                     <p class="kick-rating">${sneakerObj.rating}</p> 
                     `
+                if (brandObj.id != event.target.id) {
+                    brandObj.remove
+                }
+
                 if (sneakerObj.rarity == "Gold") {
                     kickCard.className = "kick-gold"
                 } else if (sneakerObj.rarity == "Silver") {
@@ -88,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 
             })
         event.target.reset()
+        // location.reload()
     })
 
     function getBrandData() {
@@ -97,8 +104,6 @@ document.addEventListener("DOMContentLoaded", function(){
             brandsArray.forEach(brandObj => {
             renderBrand(brandObj)
             renderOption(brandObj)
-            calculateValue(brandObj)
-            allNike(brandObj)
             })
         })
     }
